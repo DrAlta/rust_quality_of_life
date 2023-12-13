@@ -8,8 +8,8 @@ macro_rules! logy {
                 $lvl,
                 env!("CARGO_CRATE_NAME"), 
                 {
-                    const x: usize = env!("CARGO_MANIFEST_DIR").len();
-                    &(file!()[x..])
+                    const LEN: usize = env!("CARGO_MANIFEST_DIR").len();
+                    &(file!()[LEN..])
                 },
                 line!(), 
                 format!($($arg)*)
@@ -23,4 +23,8 @@ macro_rules! logy {
             )
         }
     };
+}
+#[test]
+fn test(){
+    logy!("test", "{}", 1)
 }
