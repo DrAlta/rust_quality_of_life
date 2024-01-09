@@ -5,6 +5,8 @@ pub mod unwrap_or_return_mod;
 mod ok_or;
 pub use ok_or::OkOr;
 
+mod placeholder;
+
 mod pow;
 pub use pow::Pow;
 
