@@ -1,6 +1,8 @@
 mod logy;
 
-pub mod unwrap_or_return_mod;
+
+mod add_or_insert;
+pub use add_or_insert::AddOrInsert;
 
 mod ok_or;
 pub use ok_or::OkOr;
@@ -9,6 +11,8 @@ mod placeholder;
 
 mod pow;
 pub use pow::Pow;
+
+pub mod unwrap_or_return_mod;
 
 mod vecna;
 pub use vecna::Vecna;
