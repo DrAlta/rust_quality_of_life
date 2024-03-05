@@ -9,6 +9,8 @@ pub use ok_or::OkOr;
 
 mod placeholder;
 
+mod pout;
+
 mod pow;
 pub use pow::Pow;
 
@@ -58,19 +60,19 @@ mod tests {
     #[test]
     fn unwrap_or_return_option() {
         let test = "test";
-         assert_eq!(test, unwrap_or_return!(Some(test.clone())));
+         assert_eq!(test, unwrap_or_return!(Some(test)));
     }
     #[test]
     fn unwrap_or_return_result() {
         let test = "test";
-         assert_eq!(test, unwrap_or_return!(Ok::<_,()>(test.clone())));
+         assert_eq!(test, unwrap_or_return!(Ok::<_,()>(test)));
     }
     #[test]
     fn unwrap_or_return_two() {
         let test = "test";
          assert_eq!(test, 
             unwrap_or_return!(
-                Ok::<_,()>(test.clone()),
+                Ok::<_,()>(test),
                 ()
             )
         );
@@ -80,7 +82,7 @@ mod tests {
         let test = "test";
          assert_eq!(test, 
             unwrap_or_return!(
-                Some(test.clone()),
+                Some(test),
                 let mut stuff = 1;
                 stuff += 1;
                 println!("{stuff}"),
