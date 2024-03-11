@@ -14,6 +14,9 @@ mod pout;
 mod pow;
 pub use pow::Pow;
 
+mod push_or_insert;
+pub use push_or_insert::PushOrInsert;
+
 pub mod unwrap_or_return_mod;
 
 mod vecna;
