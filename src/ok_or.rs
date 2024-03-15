@@ -10,3 +10,16 @@ impl<T, E, Q> OkOr<T, E> for Result<T, Q> {
         }
     }
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    
+    #[test]
+    fn ok_or() {
+        let a: Result<i32, i32> = Err(1);
+        let b: Result<i32, &str> =  Err("bob");
+        assert_eq!(b, a.ok_or("bob"));
+    }
+}

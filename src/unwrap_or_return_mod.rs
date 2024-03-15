@@ -73,3 +73,45 @@ macro_rules! unwrap_or_return {
         }
     };
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate as qol;
+
+    
+    #[test]
+    fn unwrap_or_return_option() {
+        let test = "test";
+         assert_eq!(test, unwrap_or_return!(Some(test)));
+    }
+    #[test]
+    fn unwrap_or_return_result() {
+        let test = "test";
+         assert_eq!(test, unwrap_or_return!(Ok::<_,()>(test)));
+    }
+    #[test]
+    fn unwrap_or_return_two() {
+        let test = "test";
+         assert_eq!(test, 
+            unwrap_or_return!(
+                Ok::<_,()>(test),
+                ()
+            )
+        );
+    }
+    #[test]
+    fn unwrap_or_return_five() {
+        let test = "test";
+         assert_eq!(test, 
+            unwrap_or_return!(
+                Some(test),
+                let mut stuff = 1;
+                stuff += 1;
+                println!("{stuff}"),
+                ()
+            )
+        );
+    }
+}

@@ -26,5 +26,5 @@ macro_rules! logy {
 }
 #[test]
 fn test(){
-    logy!("test", "{}", 1)
+    logy!("errors", "Foo{}", "Bar");
 }
