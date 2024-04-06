@@ -77,7 +77,6 @@ macro_rules! unwrap_or_return {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
     use crate as qol;
 
     
