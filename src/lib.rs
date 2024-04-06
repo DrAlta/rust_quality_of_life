@@ -23,7 +23,7 @@ pub use push_or_insert::PushOrInsert;
 mod unwrap_array;
 pub use unwrap_array::UnwrapArray;
 
-pub mod unwrap_or_return_mod;
+pub mod unwrap_or_return;
 
 mod vecna;
 pub use vecna::Vecna;
