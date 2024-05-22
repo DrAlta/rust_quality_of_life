@@ -20,6 +20,11 @@ pub use pow::Pow;
 mod push_or_insert;
 pub use push_or_insert::PushOrInsert;
 
+mod recurrent_btreemap;
+
+mod recurrent_hashmap;
+pub use recurrent_hashmap::RecurrentHashMap;
+
 mod unwrap_array;
 pub use unwrap_array::UnwrapArray;
 

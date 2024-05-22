@@ -19,3 +19,24 @@ impl<T: PartialEq> VecStuff<T> for Vec<T> {
         None
     }
 }
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn find_first(){
+        let vecna = vec![0,1,9,3,9,5,9,7,9];
+        assert_eq!(
+            vecna.find_first(&9),
+            Some(2)
+        )
+    }
+    #[test]
+    fn swap_remove_first_item(){
+        let mut vecna = vec![0,1,9,3,9,5,9,7,9,10];
+        vecna.swap_remove_first_item(&9);
+        assert_eq!(
+            vecna,
+            vec![0,1,10,3,9,5,9,7,9]
+        )
+    }
+}
