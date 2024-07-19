@@ -7,6 +7,8 @@ pub use add_or_insert::AddOrInsert;
 mod get_many_mut;
 pub use get_many_mut::GetManyMut;
 
+mod inner_iter;
+pub use inner_iter::InnerIter;
 mod ok_or;
 pub use ok_or::OkOr;
 
