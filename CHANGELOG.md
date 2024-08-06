@@ -4,6 +4,12 @@ Notable changes to the "Quality of Life" crate will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.1.11] - 2024-0-05
+
+### Added
+
+- InnerIter trait add `.inner_iter()` method to Options of types that impl IntoIter, returns a iter that with iter over ther inner value if it is `Some()` otherwise it ithers over nothings.
+
 ## [0.1.10] - 2024-05-22
 
 ### Added
