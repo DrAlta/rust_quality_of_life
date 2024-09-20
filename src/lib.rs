@@ -4,8 +4,11 @@ mod logy;
 mod add_or_insert;
 pub use add_or_insert::AddOrInsert;
 
-mod bihashmap;
-pub use bihashmap::BiHashMap;
+mod bi_hashmap;
+pub use bi_hashmap::BiHashMap;
+
+mod bi_hashmap_iter;
+pub use bi_hashmap_iter::BiHashMapIter;
 
 mod get_many_mut;
 pub use get_many_mut::GetManyMut;

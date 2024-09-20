@@ -4,6 +4,16 @@ Notable changes to the "Quality of Life" crate will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.1.13] - 2024-09-19
+
+### Added
+
+- added BiHashMapIter
+
+- implemented IntoIterator for &'a BiHashMap<O, I, V>
+
+- implemented FromIterator<((&'a O,&'b I), V)> for BiHashMap<O, I, V>
+
 ## [0.1.12] - 2024-09-19
 
 ### Added
