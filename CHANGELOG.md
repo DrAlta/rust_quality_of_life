@@ -4,7 +4,13 @@ Notable changes to the "Quality of Life" crate will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [0.1.11] - 2024-0-05
+## [0.1.12] - 2024-09-19
+
+### Added
+
+- added BiHashMap
+
+## [0.1.11] - 2024-08-05
 
 ### Added
 

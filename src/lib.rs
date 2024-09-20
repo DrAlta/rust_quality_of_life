@@ -4,6 +4,9 @@ mod logy;
 mod add_or_insert;
 pub use add_or_insert::AddOrInsert;
 
+mod bihashmap;
+pub use bihashmap::BiHashMap;
+
 mod get_many_mut;
 pub use get_many_mut::GetManyMut;
 
