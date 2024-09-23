@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 use super::AddOrInsert;
 
-impl<K: std::hash::Hash + Eq + Ord, V: std::ops::AddAssign<V>> AddOrInsert<K, V> for HashMap<K, V> {
+impl<K: std::hash::Hash + Eq, V: std::ops::AddAssign<V>> AddOrInsert<K, V> for HashMap<K, V> {
     fn add_or_insert(&mut self, key:K, mut value: V) {
         match self.remove(&key) {
             Some(entry) => {

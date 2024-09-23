@@ -4,6 +4,9 @@ Notable changes to the "Quality of Life" crate will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.1.15] - 2024-09-23
+
+-fixed a bug in BiHashMapIter where it would get stuck in a infinate loop.
 
 ## [0.1.14] - 2024-09-20
 

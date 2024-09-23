@@ -2,51 +2,15 @@ use std::collections::HashMap;
 
 use crate::BiHashMapIter;
 
+pub mod add_or_insert;
+pub mod from_iterator;
+pub mod into_iterator;
+pub mod push_or_insert;
+
 #[derive(Debug, PartialEq)]
 pub struct BiHashMap<O, I, V>(HashMap<O, HashMap<I, V>>) where
 O: Eq + std::hash::Hash, 
 I: Eq + std::hash::Hash;
-
-
-impl<'a, 'b, O, I, V> FromIterator<((&'a O,&'b I), V)> for BiHashMap<O, I, V> where
-    O: Eq + std::hash::Hash + Clone, 
-    I: Eq + std::hash::Hash + Clone
-{
-    fn from_iter<T: IntoIterator<Item = ((&'a O,&'b I), V)>>(iter: T) -> Self {
-        let mut ret = BiHashMap::new();
-        for ((o,i), v) in iter{
-            ret.insert((o.clone(), i.clone()), v);
-        }
-        ret
-    }
-}
-
-impl<O, I, V> FromIterator<((O, I), V)> for BiHashMap<O, I, V> where
-    O: Eq + std::hash::Hash + Clone, 
-    I: Eq + std::hash::Hash + Clone
-{
-    fn from_iter<T: IntoIterator<Item = ((O, I), V)>>(iter: T) -> Self {
-        let mut ret = BiHashMap::new();
-        for ((o, i), v) in iter{
-            ret.insert((o, i), v);
-        }
-        ret
-    }
-}
-
-impl<'a, O, I, V> IntoIterator for &'a BiHashMap<O, I, V> where
-    O: Eq + std::hash::Hash, 
-    I: Eq + std::hash::Hash
-{
-    type Item = ((&'a O, &'a I), &'a V);
-
-    type IntoIter = BiHashMapIter<'a ,O, I, V>;
-
-    fn into_iter(self) -> Self::IntoIter {
-        BiHashMapIter::new(self.0.iter())
-        
-    }
-}
 
 
 impl<O, I, V> BiHashMap<O, I, V> where
@@ -55,6 +19,9 @@ impl<O, I, V> BiHashMap<O, I, V> where
 {
     pub fn new() -> Self {
         Self(HashMap::new())
+    }
+    pub fn from_inner(inner:HashMap<O, HashMap<I, V>>)->Self{
+        Self(inner)
     }
     pub fn get_inner(&self) -> &HashMap<O, HashMap<I, V>> {
         &self.0
@@ -87,47 +54,6 @@ I: Eq + std::hash::Hash
     }
 }
 
-impl<O: Eq + std::hash::Hash + Clone, I: Eq + std::hash::Hash, V> crate::PushOrInsert<(O, I), V> for BiHashMap<O, I, Vec<V>> {
-    fn push_or_insert(&mut self, (o, i): (O, I), v: V) {
-        if !self.0.contains_key(&o) {
-            self.0.insert(o.clone(), HashMap::new());
-        }
-        let inner = self
-            .0
-            .get_mut(&o)
-            .expect("we added the outer key if it didn't already exist");
-
-        if inner.contains_key(&i) {
-            inner
-                .get_mut(&i)
-                .expect("we already check is the key was in it")
-                .push(v);
-        } else {
-            inner.insert(i, vec![v]);
-        }
-    }
-    
-    fn append_or_insert(&mut self, (o, i): (O, I), v: &mut Vec<V>) {
-        if !self.0.contains_key(&o) {
-            self.0.insert(o.clone(), HashMap::new());
-        }
-        let inner = self
-            .0
-            .get_mut(&o)
-            .expect("we added the outer key if it didn't already exist");
-
-        if inner.contains_key(&i) {
-            inner
-                .get_mut(&i)
-                .expect("we already check is the key was in it")
-                .append(v);
-        } else {
-            let mut new = Vec::new();
-            new.append(v);
-            inner.insert(i, new);
-        }
-    }
-}
 
 #[cfg(test)]
 mod tests {
