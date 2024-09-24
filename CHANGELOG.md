@@ -4,6 +4,12 @@ Notable changes to the "Quality of Life" crate will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.1.16] - 2024-09-24
+
+### Added
+
+- pout-debug features that enables a version of pout that prints the file and line number like logy
+
 ## [0.1.15] - 2024-09-23
 
 -fixed a bug in BiHashMapIter where it would get stuck in a infinate loop.
