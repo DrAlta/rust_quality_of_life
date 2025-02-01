@@ -4,6 +4,12 @@ Notable changes to the "Quality of Life" crate will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.1.17] - 2025-02-01
+
+### Added
+
+- InsertOrInsert and impe for `BTreeMap<K, BTreeSet<V>>` and `HashMap<K, BTreeSet<V>>`
+
 ## [0.1.16] - 2024-09-24
 
 ### Added

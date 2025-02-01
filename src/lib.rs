@@ -16,6 +16,9 @@ pub use get_many_mut::GetManyMut;
 mod inner_iter;
 pub use inner_iter::{InnerIter, InnerIterIterator};
 
+mod insert_or_insert;
+pub use insert_or_insert::InsertOrInsert;
+
 mod ok_or;
 pub use ok_or::OkOr;
 
