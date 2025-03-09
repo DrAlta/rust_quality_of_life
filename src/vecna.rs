@@ -31,3 +31,9 @@ impl<'a, T: std::fmt::Display> Vecna<'a, T> {
         write!(f, "\n{indent}]\n")
     }
 }
+
+impl<'a, T: std::fmt::Display>  From<&'a Vec<T>> for Vecna<'a, T> {
+    fn from(value: &'a Vec<T>) -> Self {
+        Self(value)
+    }
+}

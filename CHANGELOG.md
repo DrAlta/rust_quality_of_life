@@ -4,6 +4,12 @@ Notable changes to the "Quality of Life" crate will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.1.18] - 2025-03-08
+
+### Added
+
+- `impl<'a, T: std::fmt::Display>  From<&'a Vec<T>> for Vecna<'a, T>`
+
 ## [0.1.17] - 2025-02-01
 
 ### Added
