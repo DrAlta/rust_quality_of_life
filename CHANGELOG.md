@@ -3,6 +3,15 @@
 Notable changes to the "Quality of Life" crate will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## [0.1.19] - 2025-03-08
+
+### Changed
+
+- fixed opening and closing tags when Displaying Vecna
+
+### Added
+
+- unit test fot Display of Vecna
 
 ## [0.1.18] - 2025-03-08
 
