@@ -4,6 +4,8 @@ mod logy;
 mod add_or_insert;
 pub use add_or_insert::AddOrInsert;
 
+mod assert_specimen;
+
 mod bi_hashmap;
 pub use bi_hashmap::BiHashMap;
 
