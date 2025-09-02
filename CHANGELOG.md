@@ -3,13 +3,19 @@
 Notable changes to the "Quality of Life" crate will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## [0.1.21] - 2025-09-01
+
+### Fixed
+
+- assert_specimen!() was giving psyntax eror in certain cases fix it by wraping in un a code block.
+
 ## [0.1.20] - 2025-08-31
 
 ### Added
 
 - assert_specimen!() like assert_eq!() but whoes messages makes it clear that you area testing te first argument againt the second arugment that is what it is supost to be equal to.
 
-### Tod0
+### Todo
 
 - make logy!() a proc macro, code is writen needs to be tested and does the stuff for rust ot allow it asa proc macro
 
