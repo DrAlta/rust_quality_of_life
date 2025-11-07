@@ -4,6 +4,9 @@ mod logy;
 mod add_or_insert;
 pub use add_or_insert::AddOrInsert;
 
+mod as_a;
+pub use as_a::AsA;
+
 mod assert_specimen;
 
 mod bi_hashmap;
@@ -20,6 +23,9 @@ pub use inner_iter::{InnerIter, InnerIterIterator};
 
 mod insert_or_insert;
 pub use insert_or_insert::InsertOrInsert;
+
+mod maybe_as;
+pub use maybe_as::MaybeAs;
 
 mod ok_or;
 pub use ok_or::OkOr;

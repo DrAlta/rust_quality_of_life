@@ -3,6 +3,17 @@
 Notable changes to the "Quality of Life" crate will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## [0.1.22] - 2025-11-06
+
+### added
+
+- AsA trait with `as_a<O>(self)-> O` that wraps Into<O>
+
+- MaybeAs trait with `maybe_as<O>(self) -> Result<O, Err>` that wraps TryInto<O, ErrorType=Err>
+
+those make it easier to be expcite what type you want to turn it into rather than do `Into::<O>::into()`
+
+
 ## [0.1.21] - 2025-09-01
 
 ### Fixed
