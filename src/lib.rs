@@ -24,9 +24,6 @@ pub use inner_iter::{InnerIter, InnerIterIterator};
 mod insert_or_insert;
 pub use insert_or_insert::InsertOrInsert;
 
-mod maybe_as;
-pub use maybe_as::MaybeAs;
-
 mod ok_or;
 pub use ok_or::OkOr;
 
@@ -44,6 +41,9 @@ mod recurrent_btreemap;
 
 mod recurrent_hashmap;
 pub use recurrent_hashmap::RecurrentHashMap;
+
+mod try_as;
+pub use try_as::TryAs;
 
 mod unwrap_array;
 pub use unwrap_array::UnwrapArray;

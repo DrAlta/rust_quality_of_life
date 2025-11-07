@@ -3,6 +3,13 @@
 Notable changes to the "Quality of Life" crate will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## [0.1.23] - 2025-11-06
+
+### Changed
+
+- rename MaybeAs to TryAs
+
+
 ## [0.1.22] - 2025-11-06
 
 ### added
