@@ -5,7 +5,7 @@ macro_rules! assert_specimen {
             let specimen = $specimen;
             let expected = $expected;
             if specimen != expected {
-                panic!("Got {specimen:?}, Expected: {expected:?}");
+                panic!("Got:\n{specimen:?}\nExpected:\n{expected:?}");
             }
         }
     };

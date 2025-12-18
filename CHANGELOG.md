@@ -3,6 +3,12 @@
 Notable changes to the "Quality of Life" crate will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## [0.1.24] - 2025-12-07
+
+### Changed
+
+- inproved formating of assert_speciman!()
+
 ## [0.1.23] - 2025-11-06
 
 ### Changed
